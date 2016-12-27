@@ -137,8 +137,16 @@ view: t3016_seg_agg_cid_day {
     sql: ${TABLE}.c3016_visits ;;
   }
 
+  ###   MEASURES   ###
+
   measure: count {
     type: count
     drill_fields: []
+  }
+
+  measure: impression_sum {
+    type: sum
+    value_format: "[>=1000000]0.0,,'M';[>=1000]0.0,'K';0"
+    sql: ${c3016_imps} ;;
   }
 }
