@@ -11,7 +11,9 @@ include: "*.dashboard"
 # - explore: t1023_animated_video
 
 
-explore: t3016_seg_agg_cid_day {}
+explore: t3016_seg_agg_cid_day {
+ sql_always_where: ${c3016_country_id} = 'US';;
+}
 
 
 
@@ -21,6 +23,9 @@ explore: t3016_seg_agg_cid_day {}
 
 # - explore: t8001_user_crossref
 
- explore: t8002_contentview {}
+ explore: t8002_contentview {
+ sql_always_where: }${c8002_country} = 'US';;
+}
+
 
 # - explore: t8014_user_campaign
