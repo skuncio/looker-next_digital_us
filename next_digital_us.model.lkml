@@ -24,7 +24,7 @@ explore: t3016_seg_agg_cid_day {
 # - explore: t8001_user_crossref
 
  explore: t8002_contentview {
- sql_always_where: }${c8002_country} = 'US';;
+ sql_always_where: ${c8002_country} = 'US';;
 }
 
 
