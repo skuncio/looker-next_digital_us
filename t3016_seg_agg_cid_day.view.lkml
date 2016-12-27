@@ -42,10 +42,10 @@ view: t3016_seg_agg_cid_day {
     sql: ${TABLE}.c3016_date_id ;;
   }
 
-  dimension: c3016_durations {
-    type: number
-    sql: ${TABLE}.c3016_durations ;;
-  }
+#  dimension: c3016_durations {
+#    type: number
+#    sql: ${TABLE}.c3016_durations ;;
+#  }
 
   dimension: c3016_edm {
     type: string
@@ -127,15 +127,15 @@ view: t3016_seg_agg_cid_day {
     sql: ${TABLE}.c3016_title ;;
   }
 
-  dimension: c3016_unique_users {
-    type: number
-    sql: ${TABLE}.c3016_unique_users ;;
-  }
+#  dimension: c3016_unique_users {
+#    type: number
+#    sql: ${TABLE}.c3016_unique_users ;;
+#  }
 
-  dimension: c3016_visits {
-    type: number
-    sql: ${TABLE}.c3016_visits ;;
-  }
+#  dimension: c3016_visits {
+#    type: number
+#    sql: ${TABLE}.c3016_visits ;;
+#  }
 
   ###   MEASURES   ###
 
@@ -148,5 +148,17 @@ view: t3016_seg_agg_cid_day {
     type: sum
     value_format: "[>=1000000]0.0,,'M';[>=1000]0.0,'K';0"
     sql: ${c3016_imps} ;;
+  }
+
+  measure: distinct_cid {
+    type: count_distinct
+    sql: ${c3016_cid} ;;
+    approximate: yes
+  }
+
+  measure: distinct_artid {
+    type: count_distinct
+    sql: ${c3016_artid} ;;
+    approximate: yes
   }
 }
