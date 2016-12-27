@@ -25,17 +25,17 @@ view: t8002_contentview {
     sql: ${TABLE}.c8002_artid ;;
   }
 
-  dimension: c8002_auth {
+  dimension: author {
     type: string
     sql: ${TABLE}.c8002_auth ;;
   }
 
-  dimension: c8002_auto {
+  dimension: auto_play {
     type: string
     sql: ${TABLE}.c8002_auto ;;
   }
 
-  dimension: c8002_battery {
+  dimension: battery_level {
     view_label: "user"
     type: number
     sql: ${TABLE}.c8002_battery ;;
@@ -133,7 +133,7 @@ view: t8002_contentview {
     sql: ${TABLE}.c8002_device ;;
   }
 
-  dimension: c8002_did {
+  dimension: device_id {
     view_label: "user"
     type: string
     sql: ${TABLE}.c8002_did ;;
