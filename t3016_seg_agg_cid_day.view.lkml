@@ -146,7 +146,7 @@ view: t3016_seg_agg_cid_day {
 
   measure: impression_sum {
     type: sum
-    value_format: "[>=1000000]0.0,,'M';[>=1000]0.0,'K';0"
+    value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
     sql: ${c3016_imps} ;;
   }
 
