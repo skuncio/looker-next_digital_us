@@ -12,7 +12,9 @@ include: "*.dashboard"
 
 
 explore: t3016_seg_agg_cid_day {
- sql_always_where: ${c3016_country_id} = 'US';;
+  label: "1) Content Imp Summary (historical by day)"
+  view_label: "CID Views"
+  sql_always_where: ${c3016_country_id} = 'US';;
 }
 
 
@@ -23,8 +25,9 @@ explore: t3016_seg_agg_cid_day {
 
 # - explore: t8001_user_crossref
 
- explore: t8002_contentview {
+explore: t8002_contentview {
   label: "2) Content Views Detail (2 mths by time)"
+  view_label: "All Content Views"
   sql_always_where: ${c8002_country} = 'US';;
 }
 
