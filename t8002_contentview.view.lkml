@@ -1,17 +1,21 @@
 view: t8002_contentview {
   sql_table_name: public.t8002_contentview ;;
 
-  dimension: c8002_action {
+  dimension: view_type {
+    description: "PAGEVIEW or VIDEOVIEW"
+    alias: [action]
     type: string
     sql: ${TABLE}.c8002_action ;;
   }
 
   dimension: c8002_adid {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_adid ;;
   }
 
   dimension: c8002_app_version {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_app_version ;;
   }
@@ -32,31 +36,37 @@ view: t8002_contentview {
   }
 
   dimension: c8002_battery {
+    view_label: "user"
     type: number
     sql: ${TABLE}.c8002_battery ;;
   }
 
   dimension: c8002_beacon_id {
+    view_label: "beacon"
     type: string
     sql: ${TABLE}.c8002_beacon_id ;;
   }
 
   dimension: c8002_beacon_loc {
+    view_label: "beacon"
     type: string
     sql: ${TABLE}.c8002_beacon_loc ;;
   }
 
   dimension: c8002_bluetooth {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_bluetooth ;;
   }
 
-  dimension: c8002_br {
+  dimension: user_browser {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_br ;;
   }
 
-  dimension: c8002_bv {
+  dimension: user_browser_version {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_bv ;;
   }
@@ -77,6 +87,7 @@ view: t8002_contentview {
   }
 
   dimension: c8002_city {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_city ;;
   }
@@ -87,22 +98,26 @@ view: t8002_contentview {
   }
 
   dimension: c8002_country {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_country ;;
   }
 
   dimension: c8002_county {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_county ;;
   }
 
-  dimension_group: c8002_datetime {
+  dimension_group: view_datetime {
     type: time
-    timeframes: [time, date, week, month]
+    timeframes: [time, date, week, month, year, hour_of_day]
+    convert_tz: no
     sql: ${TABLE}.c8002_datetime ;;
   }
 
   dimension: c8002_dcc_id {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_dcc_id ;;
   }
@@ -112,22 +127,26 @@ view: t8002_contentview {
     sql: ${TABLE}.c8002_depth ;;
   }
 
-  dimension: c8002_device {
+  dimension: user_device {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_device ;;
   }
 
   dimension: c8002_did {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_did ;;
   }
 
   dimension: c8002_district_id {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_district_id ;;
   }
 
   dimension: c8002_dma {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_dma ;;
   }
@@ -138,16 +157,19 @@ view: t8002_contentview {
   }
 
   dimension: c8002_gaid {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_gaid ;;
   }
 
   dimension: c8002_gigyaid {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_gigyaid ;;
   }
 
   dimension: c8002_ip {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_ip ;;
   }
@@ -168,16 +190,19 @@ view: t8002_contentview {
   }
 
   dimension: c8002_lat {
+    view_label: "location"
     type: number
     sql: ${TABLE}.c8002_lat ;;
   }
 
   dimension: c8002_limit_ad_track {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_limit_ad_track ;;
   }
 
   dimension: c8002_lon {
+    view_label: "location"
     type: number
     sql: ${TABLE}.c8002_lon ;;
   }
@@ -193,31 +218,37 @@ view: t8002_contentview {
   }
 
   dimension: c8002_ngsid {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_ngsid ;;
   }
 
   dimension: c8002_nudid {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_nudid ;;
   }
 
   dimension: c8002_nxtu {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_nxtu ;;
   }
 
-  dimension: c8002_nxtu_or_did {
+  dimension: user_id {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_nxtu_or_did ;;
   }
 
   dimension: c8002_platform {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_platform ;;
   }
 
   dimension: c8002_postcode {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_postcode ;;
   }
@@ -253,11 +284,13 @@ view: t8002_contentview {
   }
 
   dimension: c8002_state {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_state ;;
   }
 
   dimension: c8002_street_id {
+    view_label: "location"
     type: string
     sql: ${TABLE}.c8002_street_id ;;
   }
@@ -272,7 +305,8 @@ view: t8002_contentview {
     sql: ${TABLE}.c8002_subsubsection ;;
   }
 
-  dimension: c8002_sz {
+  dimension: screen_size {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_sz ;;
   }
@@ -282,7 +316,8 @@ view: t8002_contentview {
     sql: ${TABLE}.c8002_title ;;
   }
 
-  dimension: c8002_ua {
+  dimension: user_agent {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_ua ;;
   }
@@ -293,12 +328,56 @@ view: t8002_contentview {
   }
 
   dimension: c8002_wifi {
+    view_label: "user"
     type: string
     sql: ${TABLE}.c8002_wifi ;;
   }
 
+  dimension: latitude_longitude {
+    alias: [view_location]
+    view_label: "location"
+    type: location
+    sql_latitude: ${c8002_lat} ;;
+    sql_longitude: ${c8002_lon} ;;
+  }
+
+# MEASURES
+
   measure: count {
     type: count
+    approximate: yes
     drill_fields: []
   }
+
+  measure: total_page_views {
+    type: count
+    filters: {
+      field: view_type value: "PAGEVIEW"
+      }
+  }
+
+  measure: total_video_views {
+    type: count
+    filters: {
+      field: view_type value: "VIDEOVIEW"
+    }
+  }
+
+  measure: average_video_duration {
+    type: average
+    sql: ${c8002_video_duration} ;;
+  }
+
+  measure: distinct_users {
+    type: count_distinct
+    sql: ${user_id} ;;
+    approximate: yes
+  }
+
+  measure: distinct_content {
+    type: count_distinct
+    sql: ${c8002_cid} ;;
+    approximate: yes
+  }
+
 }
