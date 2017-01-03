@@ -14,7 +14,7 @@ include: "*.dashboard"
 explore: t3016_seg_agg_cid_day {
   label: "1) Apple Daily US Summary (by day)"
   view_label: "CID Views"
-  sql_always_where: ${c3016_country_id} = 'US' and ${c3016_product} in ('Apple Daily', 'AppleDaily', 'ADAILY', 'Apple Daily TW', 'ADAILY-IPAD', 'Apple Daily-IPAD'} and ${c3016_region} in ('HK', 'TW') ;;
+  sql_always_where: ${c3016_country_id} = 'US' and ${c3016_product} in ('Apple Daily', 'AppleDaily', 'ADAILY', 'Apple Daily TW', 'ADAILY-IPAD', 'Apple Daily-IPAD') and ${c3016_region} in ('HK', 'TW') ;;
 }
 
 
