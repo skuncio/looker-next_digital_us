@@ -12,9 +12,9 @@ include: "*.dashboard"
 
 
 explore: t3016_seg_agg_cid_day {
-  label: "1) Content Imp Summary (historical by day)"
+  label: "1) Apple Daily US Summary (by day)"
   view_label: "CID Views"
-  sql_always_where: ${c3016_country_id} = 'US' and ${c3016_product} = 'Apple Daily' and ${c3016_region} in ('HK', 'TW') ;;
+  sql_always_where: ${c3016_country_id} = 'US' and ${c3016_product} in ('Apple Daily', 'AppleDaily', 'ADAILY', 'Apple Daily TW', 'ADAILY-IPAD', 'Apple Daily-IPAD'} and ${c3016_region} in ('HK', 'TW') ;;
 }
 
 
@@ -26,7 +26,7 @@ explore: t3016_seg_agg_cid_day {
 # - explore: t8001_user_crossref
 
 explore: t8002_contentview {
-  label: "2) Content Views Detail (2 mths by time)"
+  label: "2) Apple Daily US Views Detail (2 mths by time)"
   view_label: "All Content Views"
   sql_always_where: ${c8002_country} = 'US' and ${c8002_product} = 'Apple Daily' and ${c8002_region} in ('HK', 'TW') ;;
 }
