@@ -92,9 +92,24 @@ view: t3016_seg_agg_cid_day {
     sql: ${TABLE}.c3016_platform ;;
   }
 
+#  dimension: c3016_product {
+#    type: string
+#    sql: ${TABLE}.c3016_product ;;
+#  }
+
   dimension: c3016_product {
     type: string
-    sql: ${TABLE}.c3016_product ;;
+    case: {
+      when: {
+        sql:  ${TABLE}.c3016_product  in ('Apple Daily', 'AppleDaily', 'ADAILY', 'Apple Daily TW', 'ADAILY-IPAD', 'Apple Daily-IPAD') ;;
+        label: "Apple Daily"
+      }
+      when: {
+        sql:  ${TABLE}.c3016_product  in ('Next Magazine', 'NEXTMAG', 'Next Magazine TW', 'Next Magazine Video HK', 'NEXTPLUS') ;;
+        label: "Next Magazine"
+      }
+      else: "unknown"
+    }
   }
 
   dimension: c3016_region {
