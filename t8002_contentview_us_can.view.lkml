@@ -109,7 +109,7 @@ view: t8002_contentview_us_can {
     sql: ${TABLE}.c8002_county ;;
   }
 
-  dimension_group: view_datetime {
+  dimension_group: view {
     type: time
     timeframes: [
       raw,
