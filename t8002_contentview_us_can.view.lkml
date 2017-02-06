@@ -121,7 +121,7 @@ view: t8002_contentview_us_can {
       year,
       hour_of_day
     ]
-    convert_tz: yes
+    convert_tz: no
     sql: ${TABLE}.c8002_datetime ;;
   }
 
