@@ -345,7 +345,7 @@ view: t8002_contentview {
 
   measure: count {
     type: count
-    approximate: yes
+#    approximate: yes
     drill_fields: []
   }
 
@@ -371,13 +371,13 @@ view: t8002_contentview {
   measure: distinct_users {
     type: count_distinct
     sql: ${user_id} ;;
-    approximate: yes
+#    approximate: yes
   }
 
   measure: distinct_content {
     type: count_distinct
     sql: ${c8002_cid} ;;
-    approximate: yes
+#    approximate: yes
   }
 
 }

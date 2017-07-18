@@ -380,13 +380,13 @@ view: t8002_contentview_us_can {
     type: count_distinct
     value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
     sql: ${user_id} ;;
-    approximate: yes
+#    approximate: yes
   }
 
   measure: distinct_content {
         type: count_distinct
     value_format: "[>=1000000]0.0,,\"M\";[>=1000]0.0,\"K\";0"
     sql: ${cid} ;;
-    approximate: yes
+#    approximate: yes
   }
 }
