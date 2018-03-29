@@ -6,6 +6,7 @@ view: t1021_cid_title_day {
     sql: ${TABLE}.c1021_anim_type ;;
   }
 
+
   dimension: c1021_artid {
     type: string
     sql: ${TABLE}.c1021_artid ;;
